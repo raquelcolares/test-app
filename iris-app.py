@@ -17,7 +17,7 @@ def main():
         response = requests.get(url)
         if response.status_code == 200:
             prediction = response.json()
-            st.write(prediction["class"])
+            st.write(prediction)
         else:
             st.error("An error happened")
             st.error(response.json())
