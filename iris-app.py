@@ -12,12 +12,12 @@ def main():
         classify = st.button("Classify")
 
     if classify:
-        url=f"https://test-app-dk3j.onrender.com"
+        url=f"https://test-app-dk3j.onrender.com/iris?petal_length={petal_length}&petal_width={petal_width}&sepal_length={sepal_length}&sepal_width={sepal_width}"
 
         response = requests.get(url)
         if response.status_code == 200:
             prediction = response.json()
-            st.write(prediction)
+            st.write(prediction["class"])
         else:
             st.error("An error happened")
             st.error(response.json())
